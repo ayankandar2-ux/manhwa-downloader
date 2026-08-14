@@ -1,0 +1,35 @@
+name: Backfill full manga/manhwa archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      manga_id:
+        description: "MangaDex manga UUID"
+        required: true
+      max_chapters:
+        description: "Max chapters to download this run (safety cap for the 6h job limit)"
+        required: false
+        default: "30"
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run backfill
+        env:
+          HF_DATASET_REPO: ${{ secrets.HF_DATASET_REPO }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python downloader.py \
+            --manga-id "${{ github.event.inputs.manga_id }}" \
+            --mode backfill \
+            --max-chapters "${{ github.event.inputs.max_chapters }}"

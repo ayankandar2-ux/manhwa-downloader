@@ -1,0 +1,34 @@
+name: Check for new chapters
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs once a day at 03:00 UTC -- adjust as you like
+    - cron: "0 3 * * *"
+
+jobs:
+  check-new:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1  # keep requests sequential to respect MangaDex rate limits
+      matrix:
+        manga_id: ${{ fromJson(vars.WATCHED_MANGA_IDS) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check for new chapters
+        env:
+          HF_DATASET_REPO: ${{ secrets.HF_DATASET_REPO }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python downloader.py \
+            --manga-id "${{ matrix.manga_id }}" \
+            --mode check-new \
+            --max-chapters 10
