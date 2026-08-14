@@ -81,39 +81,46 @@ def send_to_telegram(manga_title: str, chapter_num: str, cbz_bytes: bytes):
 
 
 def run():
-    for state_path in list_state_files():
+    state_paths = list_state_files()
+    print(f"Found {len(state_paths)} state file(s): {state_paths}")
+
+    for state_path in state_paths:
         state = load_state(state_path)
         pending_ids = state.get("pending_telegram_chapter_ids", [])
+        manga_id = state.get("manga_id", "UNKNOWN")
+        print(f"[{manga_id}] pending_telegram_chapter_ids: {len(pending_ids)} -> {pending_ids[:3]}...")
+
         if not pending_ids:
+            print(f"[{manga_id}] Nothing pending, skipping.")
             continue
 
-        manga_id = state["manga_id"]
         manga_title = state.get("title") or manga_id
 
-        # We need chapter numbers, not just IDs, to find the folder. Since
-        # state only stores IDs, list chapter folders and send everything
-        # that isn't marked delivered yet -- simplest robust approach given
-        # folders are named by chapter number already.
         all_files = list_repo_files(repo_id=HF_REPO_ID, repo_type="dataset", token=HF_TOKEN)
+        print(f"[{manga_id}] Total files in dataset repo: {len(all_files)}")
+
         chapter_dirs = sorted({
             f.split("/")[2] for f in all_files
-            if f.startswith(f"chapters/{manga_id}/")
+            if f.startswith(f"chapters/{manga_id}/") and len(f.split("/")) > 2
         })
+        print(f"[{manga_id}] Chapter dirs found: {len(chapter_dirs)} -> {chapter_dirs[:5]}...")
 
         delivered = set(state.get("delivered_chapter_numbers", []))
         to_send = [c for c in chapter_dirs if c not in delivered]
+        print(f"[{manga_id}] Already delivered: {len(delivered)}. To send this run: {len(to_send)} -> {to_send[:5]}")
 
         for chapter_num in to_send:
             print(f"Bundling {manga_title} chapter {chapter_num}...")
             try:
                 cbz_bytes = build_cbz(manga_id, chapter_num)
+                print(f"  Built CBZ, {len(cbz_bytes)} bytes. Sending to Telegram chat {TELEGRAM_CHAT_ID!r}...")
                 send_to_telegram(manga_title, chapter_num, cbz_bytes)
                 delivered.add(chapter_num)
                 state["delivered_chapter_numbers"] = sorted(delivered)
                 save_state(state)
                 print(f"  Sent chapter {chapter_num} to Telegram.")
             except Exception as e:
-                print(f"  Failed on chapter {chapter_num}: {e}")
+                print(f"  FAILED on chapter {chapter_num}: {type(e).__name__}: {e}")
                 break  # stop this manga, retry next run
 
         # clear pending IDs (best-effort tracking, chapter_dirs is source of truth)
@@ -122,4 +129,9 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except Exception as e:
+        import traceback
+        print("UNHANDLED EXCEPTION:")
+        traceback.print_exc()
