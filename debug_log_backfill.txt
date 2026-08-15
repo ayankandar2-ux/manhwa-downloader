@@ -1,5 +1,176 @@
-No files have been modified since last commit. Skipping to prevent empty commit.
-Title: The Gamer
-Raw entries from API (before external-filter, before language-dedup): 0
-Total downloadable (non-external) chapters found: 0 (languages=any)
-No chapters found (check manga_id / language filter, or series may be fully licensed/external-only).
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Title: Hell Mode: The Hardcore Gamer Dominates in Another World with Garbage Balancing
+Raw entries from API (before external-filter, before language-dedup): 131
+Skipped 4 externally-hosted chapter(s) (no pages on MangaDex).
+Total downloadable (non-external) chapters found: 119 (languages=['en'])
+Attempting 119 chapter(s) for ee4bf782-9fe9-42a6-be7f-3809293818c2 (mode=backfill)...
+  Chapter 1: 27 pages uploaded.
+Upload 0 LFS files: 0it [00:00, ?it/s]Upload 0 LFS files: 0it [00:00, ?it/s]
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+  Chapter 2: 26 pages uploaded.
+Upload 0 LFS files: 0it [00:00, ?it/s]Upload 0 LFS files: 0it [00:00, ?it/s]
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+Uploading files as a binary IO buffer is not supported by Xet Storage. Falling back to HTTP upload.
+  Chapter 3: 26 pages uploaded.
+  Chapter 4: 27 pages uploaded.
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 797, in hf_raise_for_status
+    response.raise_for_status()
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://huggingface.co/api/datasets/ayankandar2/manhwa-archive/commit/main'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/manhwa-downloader/manhwa-downloader/downloader.py", line 184, in <module>
+    run(args.manga_id, args.mode, args.max_chapters, languages=langs)
+  File "/home/runner/work/manhwa-downloader/manhwa-downloader/downloader.py", line 159, in run
+    ok = download_chapter(manga_id, chapter)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/manhwa-downloader/manhwa-downloader/downloader.py", line 104, in download_chapter
+    api.upload_file(
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2146, in _inner
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 5794, in upload_file
+    return self.create_commit(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2146, in _inner
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 5328, in create_commit
+    commit_info = _send_commit(
+                  ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/_commit_api.py", line 1062, in _send_commit
+    hf_raise_for_status(response, endpoint_name="commit")
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 917, in hf_raise_for_status
+    raise _format(HfHubHTTPError, message, response) from e
+huggingface_hub.errors.HfHubHTTPError: (Request ID: Root=1-6a805b73-769f2f0b33a6429463096b29;9800201d-89e2-42ef-bdf2-a027feec843a)
+
+429 Too Many Requests: you have reached your 'api' rate limit.
+Retry after 90 seconds (922/1000 requests remaining in current 300s window).
+Url: https://huggingface.co/api/datasets/ayankandar2/manhwa-archive/commit/main.
+You have exceeded the rate limit for repository commits (128 per hour). You can retry this action in about 1 hour. To reduce the number of commits, you can upload entire folders at once using the Hub Python library: https://huggingface.co/docs/huggingface_hub/guides/upload#upload-a-folder or for large folders: https://huggingface.co/docs/huggingface_hub/guides/upload#upload-a-large-folder. To increase your rate limit for this action, you can upgrade to a paid plan at https://huggingface.co/pricing.
