@@ -39,4 +39,5 @@ jobs:
           git config user.name "github-actions"
           git add debug_log.txt
           git commit -m "Update debug log [skip ci]" || echo "No changes to commit"
+          git pull --rebase --no-edit origin main || true
           git push
