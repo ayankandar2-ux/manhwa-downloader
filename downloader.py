@@ -79,6 +79,10 @@ def download_chapter(manga_id: str, chapter: dict) -> bool:
         print(f"  Failed to get page URLs for chapter {chapter_num}: {e}")
         return False
 
+    if not urls:
+        print(f"  Chapter {chapter_num}: 0 pages available (likely external/licensed) -- skipping, not marking done.")
+        return False
+
     for i, url in enumerate(urls, start=1):
         t0 = time.monotonic()
         try:
@@ -115,8 +119,9 @@ def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
 
     state = load_state(manga_id)
     chapters = md.get_all_chapters(manga_id)
+    print(f"Total downloadable (non-external) chapters found: {len(chapters)}")
     if not chapters:
-        print("No chapters found (check manga_id / language filter).")
+        print("No chapters found (check manga_id / language filter, or series may be fully licensed/external-only).")
         return
 
     if not state["title"]:

@@ -86,7 +86,14 @@ def get_all_chapters(manga_id: str, languages: list[str] = ["en"]) -> list[dict]
         seen.add(num)
         deduped.append(ch)
 
-    return deduped
+    # Filter out externally-hosted chapters (officially licensed releases
+    # point off-MangaDex and have zero downloadable pages here).
+    downloadable = [c for c in deduped if not c["attributes"].get("externalUrl")]
+    skipped_external = len(deduped) - len(downloadable)
+    if skipped_external:
+        print(f"Skipped {skipped_external} externally-hosted chapter(s) (no pages on MangaDex).")
+
+    return downloadable
 
 
 def get_chapter_page_urls(chapter_id: str, data_saver: bool = False) -> list[str]:

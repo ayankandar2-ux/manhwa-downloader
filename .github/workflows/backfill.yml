@@ -32,4 +32,13 @@ jobs:
           python downloader.py \
             --manga-id "${{ github.event.inputs.manga_id }}" \
             --mode backfill \
-            --max-chapters "${{ github.event.inputs.max_chapters }}"
+            --max-chapters "${{ github.event.inputs.max_chapters }}" 2>&1 | tee debug_log_backfill.txt
+
+      - name: Commit debug log
+        if: always()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add debug_log_backfill.txt
+          git commit -m "Update backfill debug log [skip ci]" || echo "No changes to commit"
+          git push
