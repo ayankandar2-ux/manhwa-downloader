@@ -37,6 +37,24 @@ def _get(path: str, params: dict | None = None, kind: str = "general", retries: 
     raise RuntimeError(f"Failed after {retries} retries: {path}")
 
 
+def get_manga_details(manga_id: str) -> dict:
+    """Fetch manga title and cover art URL."""
+    data = _get(f"/manga/{manga_id}", params={"includes[]": ["cover_art"]})
+    attrs = data["data"]["attributes"]
+    titles = attrs["title"]
+    title = titles.get("en") or next(iter(titles.values()), manga_id)
+
+    cover_url = None
+    for rel in data["data"]["relationships"]:
+        if rel["type"] == "cover_art":
+            filename = rel.get("attributes", {}).get("fileName")
+            if filename:
+                cover_url = f"https://uploads.mangadex.org/covers/{manga_id}/{filename}"
+            break
+
+    return {"title": title, "cover_url": cover_url}
+
+
 def search_manga(title: str, limit: int = 5) -> list[dict]:
     """Search for a manga by title. Returns list of {id, title}."""
     data = _get("/manga", params={"title": title, "limit": limit})

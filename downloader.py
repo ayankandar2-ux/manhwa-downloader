@@ -118,15 +118,21 @@ def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
         sys.exit("HF_DATASET_REPO and HF_TOKEN must be set as environment variables / secrets.")
 
     state = load_state(manga_id)
+    if not state.get("title") or state["title"] == manga_id:
+        try:
+            details = md.get_manga_details(manga_id)
+            state["title"] = details["title"]
+            state["cover_url"] = details["cover_url"]
+            print(f"Fetched title: {details['title']}")
+            save_state(state)
+        except Exception as e:
+            print(f"Could not fetch title/cover: {e}")
+
     chapters = md.get_all_chapters(manga_id)
     print(f"Total downloadable (non-external) chapters found: {len(chapters)}")
     if not chapters:
         print("No chapters found (check manga_id / language filter, or series may be fully licensed/external-only).")
         return
-
-    if not state["title"]:
-        # best-effort title fill, not critical
-        state["title"] = manga_id
 
     already_done = set(state["downloaded_chapter_ids"])
 

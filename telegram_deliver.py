@@ -66,15 +66,43 @@ def build_cbz(manga_id: str, chapter_num: str) -> bytes:
     return buf.read()
 
 
-def send_to_telegram(manga_title: str, chapter_num: str, cbz_bytes: bytes):
-    filename = f"{manga_title or 'chapter'}_{chapter_num}.cbz".replace(" ", "_")
+def send_to_telegram(manga_title: str, chapter_num: str, cbz_bytes: bytes, cover_url: str | None = None):
+    safe_title = (manga_title or "chapter").replace(" ", "_").replace("/", "_")
+    filename = f"{safe_title}_Ch{chapter_num}.cbz"
+
+    files = {"document": (filename, cbz_bytes)}
+    data = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "caption": f"📖 {manga_title}\nChapter {chapter_num}",
+    }
+
+    # Attach cover art as the document thumbnail if we have one (Telegram
+    # requires JPEG, <200KB, and roughly square -- best effort, skip on any issue).
+    if cover_url:
+        try:
+            cover_resp = requests.get(cover_url, timeout=20)
+            cover_resp.raise_for_status()
+            thumb_bytes = cover_resp.content
+            if len(thumb_bytes) > 200_000:
+                # Downscale via Pillow if available; otherwise skip the thumbnail.
+                try:
+                    from PIL import Image
+                    img = Image.open(io.BytesIO(thumb_bytes)).convert("RGB")
+                    img.thumbnail((320, 320))
+                    out = io.BytesIO()
+                    img.save(out, format="JPEG", quality=80)
+                    thumb_bytes = out.getvalue()
+                except ImportError:
+                    thumb_bytes = None
+            if thumb_bytes:
+                files["thumbnail"] = ("cover.jpg", thumb_bytes)
+        except requests.RequestException:
+            pass  # thumbnail is best-effort, never block delivery over it
+
     resp = requests.post(
         f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument",
-        data={
-            "chat_id": TELEGRAM_CHAT_ID,
-            "caption": f"{manga_title} — Chapter {chapter_num}",
-        },
-        files={"document": (filename, cbz_bytes)},
+        data=data,
+        files=files,
         timeout=120,
     )
     resp.raise_for_status()
@@ -113,7 +141,7 @@ def run():
             try:
                 cbz_bytes = build_cbz(manga_id, chapter_num)
                 print(f"  Built CBZ, {len(cbz_bytes)} bytes. Sending to Telegram chat {TELEGRAM_CHAT_ID!r}...")
-                send_to_telegram(manga_title, chapter_num, cbz_bytes)
+                send_to_telegram(manga_title, chapter_num, cbz_bytes, state.get("cover_url"))
                 delivered.add(chapter_num)
                 state["delivered_chapter_numbers"] = sorted(delivered)
                 # only clear pending entries we've actually confirmed delivered
