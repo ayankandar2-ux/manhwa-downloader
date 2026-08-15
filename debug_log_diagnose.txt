@@ -1,0 +1,17 @@
+Raw entries from API (before external-filter, before language-dedup): 6
+Raw entries from API (before external-filter, before language-dedup): 6
+Kamiasobi! ~Card Game Shoujo No Nichijou~ | id=4f07037d-d46b-45d0-acff-53b596b97fa3 | real chapters (any lang)=6 | real chapters (en)=6
+Raw entries from API (before external-filter, before language-dedup): 340
+Skipped 2 externally-hosted chapter(s) (no pages on MangaDex).
+Raw entries from API (before external-filter, before language-dedup): 131
+Skipped 4 externally-hosted chapter(s) (no pages on MangaDex).
+Hell Mode: Yarikomi Suki no Gamer wa Haisettei no Isekai de Musou Suru—Hajimari no Shoukanshi | id=ee4bf782-9fe9-42a6-be7f-3809293818c2 | real chapters (any lang)=139 | real chapters (en)=119
+Raw entries from API (before external-filter, before language-dedup): 0
+Raw entries from API (before external-filter, before language-dedup): 0
+Saikyou Shoukanshi wa Around 30 Ossan ~Card wo Oya ni Shobun sareta Card Gamer no Isekai Musou~ | id=10f6a260-8609-4cfe-8490-dfa669f378da | real chapters (any lang)=0 | real chapters (en)=0
+Raw entries from API (before external-filter, before language-dedup): 39
+Raw entries from API (before external-filter, before language-dedup): 17
+Gamer ga Isekai Konten Shite Harem Jinsei e Continue suru Sou desu | id=8c54d09b-e24d-4679-98e0-44786e8e172e | real chapters (any lang)=16 | real chapters (en)=16
+Raw entries from API (before external-filter, before language-dedup): 192
+Raw entries from API (before external-filter, before language-dedup): 109
+The Count's Youngest Son Is a Gamer | id=10263dc2-dd53-4099-bf57-cad6c4acc14b | real chapters (any lang)=109 | real chapters (en)=109
