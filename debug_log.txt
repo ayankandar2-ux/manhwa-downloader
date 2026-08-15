@@ -1,5 +1,12 @@
-Found 1 state file(s): ['state/32d76d19-8a05-4db0-9fc2-e0b0648fe9d0.json']
-[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Total files in dataset repo: 2
+Found 2 state file(s): ['state/32d76d19-8a05-4db0-9fc2-e0b0648fe9d0.json', 'state/4a973243-952e-44d7-a50f-883b4b7c9cc2.json']
+[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Total files in dataset repo: 16
 [32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Chapter dirs found: 0 -> []...
 [32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Already delivered: 0. To send this run: 0 -> []
 [32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Nothing new to deliver, skipping.
+[4a973243-952e-44d7-a50f-883b4b7c9cc2] Total files in dataset repo: 16
+[4a973243-952e-44d7-a50f-883b4b7c9cc2] Chapter dirs found: 1 -> ['151']...
+[4a973243-952e-44d7-a50f-883b4b7c9cc2] Already delivered: 0. To send this run: 1 -> ['151']
+Bundling 4a973243-952e-44d7-a50f-883b4b7c9cc2 chapter 151...
+  Built CBZ, 31245997 bytes. Sending to Telegram chat '-1004376874033'...
+  Sent chapter 151 to Telegram.
+[4a973243-952e-44d7-a50f-883b4b7c9cc2] Done. 1 total delivered.
