@@ -1,0 +1,27 @@
+name: Reset Telegram delivery status
+
+on:
+  workflow_dispatch:
+    inputs:
+      manga_id:
+        description: "MangaDex manga UUID to reset (resends all downloaded chapters on next delivery run)"
+        required: true
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install huggingface_hub
+
+      - name: Reset delivery status
+        env:
+          HF_DATASET_REPO: ${{ secrets.HF_DATASET_REPO }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python reset_delivery.py --manga-id "${{ github.event.inputs.manga_id }}"
