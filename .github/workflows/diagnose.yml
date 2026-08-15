@@ -1,0 +1,36 @@
+name: Diagnose manga chapter availability
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Title to search for on MangaDex"
+        required: true
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Search and check availability
+        run: python diagnose.py --title "${{ github.event.inputs.title }}" 2>&1 | tee debug_log_diagnose.txt
+
+      - name: Commit debug log
+        if: always()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git add debug_log_diagnose.txt
+          git commit -m "Update diagnose log [skip ci]" || echo "No changes to commit"
+          git pull --rebase --no-edit origin main || true
+          git push
