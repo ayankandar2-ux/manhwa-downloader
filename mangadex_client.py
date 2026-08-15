@@ -74,11 +74,16 @@ def search_manga(title: str, limit: int = 5) -> list[dict]:
     return results
 
 
-def get_all_chapters(manga_id: str, languages: list[str] = ["en"]) -> list[dict]:
+def get_all_chapters(manga_id: str, languages: list[str] | None = ["en"]) -> list[dict]:
     """
     Fetch the FULL chapter list for a manga (paginated, 100 per page).
     Returns chapters sorted by chapter number, deduped by chapter number
     (keeps first scanlation group found per chapter number).
+
+    languages=None means "any language" -- useful since many popular
+    English releases on MangaDex are external-only nowadays (self-hosted
+    by groups, or officially licensed), while other languages may still
+    have real MangaDex-hosted pages.
     """
     all_chapters = []
     offset = 0
@@ -86,12 +91,13 @@ def get_all_chapters(manga_id: str, languages: list[str] = ["en"]) -> list[dict]
 
     while True:
         params = {
-            "translatedLanguage[]": languages,
             "limit": limit,
             "offset": offset,
             "order[chapter]": "asc",
             "includes[]": ["scanlation_group"],
         }
+        if languages:
+            params["translatedLanguage[]"] = languages
         data = _get(f"/manga/{manga_id}/feed", params=params)
         batch = data["data"]
         all_chapters.extend(batch)

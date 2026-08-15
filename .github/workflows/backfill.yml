@@ -10,6 +10,10 @@ on:
         description: "Max chapters to download this run (safety cap for the 6h job limit)"
         required: false
         default: "30"
+      languages:
+        description: "Comma-separated language codes (e.g. en,en-us), or 'any' for all languages"
+        required: false
+        default: "any"
 
 permissions:
   contents: write
@@ -35,7 +39,8 @@ jobs:
           python downloader.py \
             --manga-id "${{ github.event.inputs.manga_id }}" \
             --mode backfill \
-            --max-chapters "${{ github.event.inputs.max_chapters }}" 2>&1 | tee debug_log_backfill.txt
+            --max-chapters "${{ github.event.inputs.max_chapters }}" \
+            --languages "${{ github.event.inputs.languages }}" 2>&1 | tee debug_log_backfill.txt
 
       - name: Commit debug log
         if: always()

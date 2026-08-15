@@ -113,7 +113,7 @@ def download_chapter(manga_id: str, chapter: dict) -> bool:
     return True
 
 
-def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
+def run(manga_id: str, mode: str, max_chapters_per_run: int = 30, languages=("en",)):
     if not HF_REPO_ID or not HF_TOKEN:
         sys.exit("HF_DATASET_REPO and HF_TOKEN must be set as environment variables / secrets.")
 
@@ -127,8 +127,9 @@ def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
     except Exception as e:
         print(f"Could not fetch title/cover: {e}")
 
-    chapters = md.get_all_chapters(manga_id)
-    print(f"Total downloadable (non-external) chapters found: {len(chapters)}")
+    lang_list = list(languages) if languages else None
+    chapters = md.get_all_chapters(manga_id, languages=lang_list)
+    print(f"Total downloadable (non-external) chapters found: {len(chapters)} (languages={lang_list or 'any'})")
     if not chapters:
         print("No chapters found (check manga_id / language filter, or series may be fully licensed/external-only).")
         return
@@ -150,8 +151,9 @@ def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
         print("Nothing new to download.")
         return
 
-    print(f"Downloading {len(todo)} chapter(s) for {manga_id} (mode={mode})...")
+    print(f"Attempting {len(todo)} chapter(s) for {manga_id} (mode={mode})...")
     pending = set(state.get("pending_telegram_chapter_ids", []))
+    succeeded = 0
 
     for chapter in todo:
         ok = download_chapter(manga_id, chapter)
@@ -162,11 +164,11 @@ def run(manga_id: str, mode: str, max_chapters_per_run: int = 30):
             state["pending_telegram_chapter_ids"] = sorted(pending)
             state["last_chapter_downloaded"] = chapter["attributes"].get("chapter")
             save_state(state)  # checkpoint after every chapter, not just at the end
+            succeeded += 1
         else:
-            print(f"  Stopping run early due to failure on chapter {chapter['attributes'].get('chapter')}.")
-            break
+            print(f"  Skipping chapter {chapter['attributes'].get('chapter')} (no pages / fetch error).")
 
-    print("Done. Progress saved -- re-run to continue if not fully complete.")
+    print(f"Done. {succeeded}/{len(todo)} chapter(s) downloaded successfully this run.")
 
 
 if __name__ == "__main__":
@@ -175,5 +177,8 @@ if __name__ == "__main__":
     parser.add_argument("--mode", choices=["backfill", "check-new"], required=True)
     parser.add_argument("--max-chapters", type=int, default=30,
                          help="Safety cap per run to stay inside Actions time limit")
+    parser.add_argument("--languages", default="en",
+                         help="Comma-separated language codes, or 'any' to accept all languages")
     args = parser.parse_args()
-    run(args.manga_id, args.mode, args.max_chapters)
+    langs = None if args.languages.lower() == "any" else args.languages.split(",")
+    run(args.manga_id, args.mode, args.max_chapters, languages=langs)
