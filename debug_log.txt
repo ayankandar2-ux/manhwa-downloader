@@ -1,3 +1,5 @@
 Found 1 state file(s): ['state/32d76d19-8a05-4db0-9fc2-e0b0648fe9d0.json']
-[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] pending_telegram_chapter_ids: 0 -> []...
-[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Nothing pending, skipping.
+[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Total files in dataset repo: 2
+[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Chapter dirs found: 0 -> []...
+[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Already delivered: 0. To send this run: 0 -> []
+[32d76d19-8a05-4db0-9fc2-e0b0648fe9d0] Nothing new to deliver, skipping.
