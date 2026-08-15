@@ -86,14 +86,7 @@ def run():
 
     for state_path in state_paths:
         state = load_state(state_path)
-        pending_ids = state.get("pending_telegram_chapter_ids", [])
         manga_id = state.get("manga_id", "UNKNOWN")
-        print(f"[{manga_id}] pending_telegram_chapter_ids: {len(pending_ids)} -> {pending_ids[:3]}...")
-
-        if not pending_ids:
-            print(f"[{manga_id}] Nothing pending, skipping.")
-            continue
-
         manga_title = state.get("title") or manga_id
 
         all_files = list_repo_files(repo_id=HF_REPO_ID, repo_type="dataset", token=HF_TOKEN)
@@ -109,6 +102,12 @@ def run():
         to_send = [c for c in chapter_dirs if c not in delivered]
         print(f"[{manga_id}] Already delivered: {len(delivered)}. To send this run: {len(to_send)} -> {to_send[:5]}")
 
+        if not to_send:
+            print(f"[{manga_id}] Nothing new to deliver, skipping.")
+            continue
+
+        remaining_pending = set(state.get("pending_telegram_chapter_ids", []))
+
         for chapter_num in to_send:
             print(f"Bundling {manga_title} chapter {chapter_num}...")
             try:
@@ -117,15 +116,16 @@ def run():
                 send_to_telegram(manga_title, chapter_num, cbz_bytes)
                 delivered.add(chapter_num)
                 state["delivered_chapter_numbers"] = sorted(delivered)
+                # only clear pending entries we've actually confirmed delivered
+                remaining_pending = {p for p in remaining_pending if p not in delivered}
+                state["pending_telegram_chapter_ids"] = sorted(remaining_pending)
                 save_state(state)
                 print(f"  Sent chapter {chapter_num} to Telegram.")
             except Exception as e:
                 print(f"  FAILED on chapter {chapter_num}: {type(e).__name__}: {e}")
-                break  # stop this manga, retry next run
+                break  # stop this manga, retry remaining next run -- state already reflects true progress
 
-        # clear pending IDs (best-effort tracking, chapter_dirs is source of truth)
-        state["pending_telegram_chapter_ids"] = []
-        save_state(state)
+        print(f"[{manga_id}] Done. {len(delivered)} total delivered.")
 
 
 if __name__ == "__main__":
