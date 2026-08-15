@@ -42,7 +42,15 @@ def get_manga_details(manga_id: str) -> dict:
     data = _get(f"/manga/{manga_id}", params={"includes[]": ["cover_art"]})
     attrs = data["data"]["attributes"]
     titles = attrs["title"]
-    title = titles.get("en") or next(iter(titles.values()), manga_id)
+
+    title = titles.get("en")
+    if not title:
+        for alt in attrs.get("altTitles", []):
+            if "en" in alt:
+                title = alt["en"]
+                break
+    if not title:
+        title = next(iter(titles.values()), manga_id)
 
     cover_url = None
     for rel in data["data"]["relationships"]:
