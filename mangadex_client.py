@@ -118,6 +118,8 @@ def get_all_chapters(manga_id: str, languages: list[str] | None = ["en"]) -> lis
         seen.add(num)
         deduped.append(ch)
 
+    print(f"Raw entries from API (before external-filter, before language-dedup): {len(all_chapters)}")
+
     # Filter out externally-hosted chapters (officially licensed releases
     # point off-MangaDex and have zero downloadable pages here).
     downloadable = [c for c in deduped if not c["attributes"].get("externalUrl")]
