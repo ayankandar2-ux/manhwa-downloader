@@ -6,6 +6,9 @@ on:
     # Runs every 2 hours -- adjust as you like
     - cron: "0 */2 * * *"
 
+permissions:
+  contents: write
+
 jobs:
   deliver:
     runs-on: ubuntu-latest
@@ -25,7 +28,9 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python telegram_deliver.py 2>&1 | tee debug_log.txt
+        run: |
+          set -o pipefail
+          python telegram_deliver.py 2>&1 | tee debug_log.txt
 
       - name: Commit debug log
         if: always()
